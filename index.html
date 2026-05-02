@@ -3,26 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indy Home Lending | Northern Indianapolis Mortgage Services</title>
+    <title>Indy Home Lending | New Age Mortgage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { font-family: -apple-system, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 40px auto; padding: 20px; }
-        .hero { text-align: center; border-bottom: 2px solid #eee; padding-bottom: 20px; margin-bottom: 30px; }
-        .form-container { background: #f9f9f9; padding: 25px; border-radius: 8px; border: 1px solid #ddd; }
-        .tcpa { font-size: 0.8rem; color: #666; margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px; }
+        :root { --glass: rgba(255, 255, 255, 0.15); --blur: blur(15px); }
+        
+        body { 
+            /* Replace the URL below with your Leonardo.ai image link */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-attachment: fixed; background-position: center;
+            font-family: 'Inter', 'Segoe UI', sans-serif; color: white; min-height: 100vh;
+        }
+
+        .glass-card { 
+            background: var(--glass); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+            border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 25px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .loan-bar button {
+            background: var(--glass); border: 1px solid rgba(255, 255, 255, 0.3); color: white;
+            padding: 10px 20px; border-radius: 50px; transition: 0.3s; margin: 5px;
+        }
+        .loan-bar button:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
+
+        #ticker-container { background: rgba(0,0,0,0.6); padding: 10px 0; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <h1>Indy Home Lending</h1>
-        <p>Expert Mortgage Solutions for Northern Indianapolis & Fishers</p>
-    </div>
-    <div class="form-container">
-        <h3>Get Your Personalized Rate Quote</h3>
-        <p>Fill out the form below and we'll reach out shortly.</p>
-        <p><em>[Lead Capture Form Integration Active]</em></p>
-        <div class="tcpa">
-            <p>By clicking "Submit", I agree to receive text messages and emails from Indy Home Lending regarding my inquiry. Consent is not a condition of purchase. Message and data rates may apply. Reply STOP to opt-out.</p>
+
+<!-- News Ticker -->
+<div id="ticker-container" class="fixed-top">
+    <marquee scrollamount="5"> 
+        🔥 Current Market Trend: 10-Year Treasury Yield Influencing Rates | New Construction Boom in Fishers & Noblesville | FHA Down Payment Requirements holding at 3.5% | VA Loans: $0 Down for Veterans 
+    </marquee>
+</div>
+
+<div class="container mt-5 pt-5 pb-5">
+    <div class="row g-4">
+        
+        <!-- SIDEBAR: Market Pulse -->
+        <div class="col-lg-4">
+            <div class="glass-card mb-4">
+                <h4 class="fw-bold mb-3">Market Pulse</h4>
+                <p class="small text-light">Live US 10-Year Treasury Yield</p>
+                <!-- TradingView Widget -->
+                <div style="height: 250px;">
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                        {
+                        "symbol": "TVC:US10Y",
+                        "width": "100%", "height": "100%", "locale": "en", "dateRange": "12M",
+                        "colorTheme": "dark", "trendLineColor": "#37a6ef", "underLineColor": "rgba(55, 166, 239, 0.15)",
+                        "isTransparent": true, "autosize": true
+                        }
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <h5 class="fw-bold">Why Choose Indy Home Lending?</h5>
+                <p class="small">With over 10 years of masonry and construction experience, I understand the value of your home from the foundation up.</p>
+            </div>
+        </div>
+
+        <!-- MAIN HUB: Lead Capture -->
+        <div class="col-lg-8">
+            <div class="glass-card text-center mb-4">
+                <h1 class="display-5 fw-bold">New Age Mortgages</h1>
+                <p class="lead">Serving Greater Indianapolis with Precision and Insight</p>
+                
+                <div class="bg-white p-4 rounded-4 mt-4 shadow-lg text-dark">
+                    <h3 class="fw-bold mb-3">Quick Quote Portal</h3>
+                    <!-- Replace the div below with your Tally.so iframe code -->
+                    <div style="height: 300px; border: 2px dashed #ccc; display: flex; align-items: center; justify-content: center;">
+                        [Tally Lead Form Integration Active]
+                    </div>
+                    <p class="mt-3 text-muted small">By submitting, you agree to receive mortgage updates.</p>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE LOAN BAR -->
+            <div class="glass-card">
+                <h4 class="fw-bold mb-3 text-center">Loan Solutions</h4>
+                <div class="loan-bar d-flex flex-wrap justify-content-center">
+                    <button onclick="alert('New Construction: Specialized financing for your custom build with 1x-close options.')">New Construction</button>
+                    <button onclick="alert('Conventional: The standard for established buyers in Northern Indy.')">Conventional</button>
+                    <button onclick="alert('FHA: 3.5% down payment options for first-time buyers.')">FHA</button>
+                    <button onclick="alert('USDA/VA: Zero-down options for rural areas and Veterans.')">USDA & VA</button>
+                    <button onclick="alert('Renovation: Finance the purchase and the remodel in one loan.')">Renovation</button>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<footer class="text-center py-4">
+    <p class="small">&copy; 2026 David Michael Schneider | Mortgage Broker</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+save
+
