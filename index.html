@@ -11,12 +11,12 @@
             --glass: rgba(255, 255, 255, 0.1); 
             --glass-border: rgba(255, 255, 255, 0.2);
             --blur: blur(20px); 
-            --accent: #ff3e3e; /* High-performance red */
+            --accent: #ff3e3e;
         }
 
         body {
-            /* High-res Rocky/Slate background for that premium contrast */
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070');
+            /* Modern White House Background - No more mountains */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070');
             background-size: cover; 
             background-attachment: fixed; 
             background-position: center;
@@ -24,10 +24,8 @@
             color: #f8f9fa; 
             min-height: 100vh;
             margin: 0;
-            overflow-x: hidden;
         }
 
-        /* Glassmorphism Logic */
         .glass-panel {
             background: var(--glass); 
             backdrop-filter: var(--blur); 
@@ -36,16 +34,6 @@
             border-radius: 24px; 
             padding: 2rem;
             box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
-        }
-        .glass-panel:hover { transform: translateY(-5px); }
-
-        /* Google-style Metric Card */
-        .metric-card {
-            border-left: 4px solid var(--accent);
-            background: rgba(0,0,0,0.3);
-            padding: 15px;
-            border-radius: 12px;
         }
 
         .btn-glass {
@@ -56,13 +44,14 @@
             border-radius: 12px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
             transition: 0.3s;
         }
-        .btn-glass:hover { background: #e62e2e; transform: scale(1.05); }
+        .btn-glass:hover { background: #e62e2e; transform: scale(1.05); color: white; }
 
         #market-ticker {
-            background: rgba(255,255,255,0.05);
+            background: rgba(0,0,0,0.8);
             border-bottom: 1px solid var(--glass-border);
             padding: 8px 0;
             font-family: 'Roboto Mono', monospace;
@@ -72,42 +61,35 @@
 </head>
 <body>
 
-<!-- TOP TICKER: Google-style Data Strip -->
 <div id="market-ticker" class="fixed-top">
     <div class="container-fluid">
-        <marquee scrollamount="4">
-            <span class="text-danger">● LIVE</span> US 10Y YIELD: MONITORING VOLATILITY | <span class="text-info">CONVENTIONAL 30Y: TRACKING</span> | NEW CONSTRUCTION SPECIALISTS | SERVING GREATER INDIANAPOLIS & FISHERS
+        <marquee scrollamount="5">
+            <span class="text-danger">● LIVE MARKET:</span> 10Y TREASURY YIELD TRACKING | <span class="text-info">30Y CONVENTIONAL:</span> MARKET VOLATILITY ALERT | <span class="text-success">FHA/VA:</span> RATE LOCK OPPORTUNITY | <span class="text-warning">USDA:</span> RURAL DEVELOPMENT UPDATES | SERVING FISHERS & GREATER INDIANAPOLIS
         </marquee>
     </div>
 </div>
 
 <div class="container mt-5 pt-5">
-    <!-- HERO SECTION -->
     <div class="row mb-5 align-items-center">
         <div class="col-lg-7">
             <h1 class="display-3 fw-bold mb-3">New Age <span style="color: var(--accent);">Lending</span></h1>
-            <p class="lead mb-4">Precision engineering for your home financing. Leveraging a decade of construction expertise to build better mortgage solutions.</p>
+            <p class="lead mb-4">Sophisticated mortgage solutions for the modern homebuyer. Real-time data and expert brokerage to secure your best rate in Indianapolis.</p>
             <div class="d-flex gap-3">
-                <button class="btn btn-glass">Get Quick Quote</button>
-                <button class="btn btn-outline-light rounded-pill px-4">View Rates</button>
+                <a href="#quote" class="btn-glass">Get Quick Quote</a>
+                <a href="#pulse" class="btn btn-outline-light rounded-pill px-4">View Rates</a>
             </div>
         </div>
         <div class="col-lg-5">
             <div class="glass-panel">
                 <h5 class="text-uppercase small mb-3 text-muted">The Engine Room</h5>
-                <div class="metric-card mb-3">
-                    <p class="mb-0 small">US 10-Year Treasury</p>
-                    <h3 class="mb-0 fw-bold">Live Yield Feed</h3>
-                </div>
-                <!-- TradingView Engine -->
-                <div style="height: 200px;">
+                <div style="height: 250px;">
                     <div id="tradingview_engine" style="height: 100%;"></div>
                     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
                     <script type="text/javascript">
                     new TradingView.widget({
                         "autosize": true, "symbol": "TVC:US10Y", "interval": "D",
-                        "theme": "dark", "style": "3", "locale": "en",
-                        "hide_top_toolbar": true, "container_id": "tradingview_engine"
+                        "theme": "dark", "style": "2", "locale": "en",
+                        "hide_top_toolbar": true, "hide_legend": true, "container_id": "tradingview_engine"
                     });
                     </script>
                 </div>
@@ -116,28 +98,26 @@
     </div>
 
     <div class="row g-4">
-        <!-- LEAD PORTAL -->
-        <div class="col-md-8">
+        <div id="quote" class="col-md-8">
             <div class="glass-panel h-100" style="background: rgba(255,255,255,0.95); color: #212529;">
                 <h2 class="fw-bold mb-4">Quick Quote Portal</h2>
                 <div class="p-5 border rounded-4 text-center bg-white" style="border-style: dashed !important;">
-                    <!-- INTEGRATE TALLY HERE -->
-                    <h4 class="text-muted">Tally Lead Form Integration Ready</h4>
-                    <p class="small text-muted">Secure Application Environment</p>
+                    <h4 class="text-muted">Secure Form Loading...</h4>
+                    <p class="small text-muted">Ready to provide instant rate feedback.</p>
                 </div>
             </div>
         </div>
 
-        <!-- INFO SIDEBAR -->
-        <div class="col-md-4">
+        <div id="pulse" class="col-md-4">
             <div class="glass-panel mb-4">
                 <h4 class="fw-bold">Market Pulse</h4>
-                <p class="small">Rates change by the second. Our dashboard keeps you ahead of the curve.</p>
+                <p class="small">Real-time tracking of the indicators that drive your mortgage rate.</p>
                 <hr class="opacity-20">
                 <ul class="list-unstyled small">
-                    <li class="mb-2">✓ 10+ Years Construction Experience</li>
                     <li class="mb-2">✓ Wholesale Broker Rates</li>
-                    <li class="mb-2">✓ Local Fishers Insight</li>
+                    <li class="mb-2">✓ Direct Market Access</li>
+                    <li class="mb-2">✓ Local Fishers Expertise</li>
+                    <li class="mb-2">✓ New Construction Financing</li>
                 </ul>
             </div>
         </div>
@@ -148,6 +128,5 @@
     <p class="small">&copy; 2026 David Michael Schneider | Indy Home Lending</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
