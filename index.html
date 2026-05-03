@@ -3,26 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indy Home Lending | New Age Mortgage</title>
+    <title>David Schneider | Indy Home Lending</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
     <style>
         :root { --glass: rgba(255, 255, 255, 0.1); --glass-border: rgba(255, 255, 255, 0.2); --blur: blur(20px); --accent: #ff3e3e; }
-        body { 
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070'); 
-            background-size: cover; background-attachment: fixed; background-position: center; 
-            font-family: 'Inter', sans-serif; color: #f8f9fa; min-height: 100vh; margin: 0; scroll-behavior: smooth; 
-        }
+        body { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070'); background-size: cover; background-attachment: fixed; background-position: center; font-family: 'Inter', sans-serif; color: #f8f9fa; min-height: 100vh; margin: 0; scroll-behavior: smooth; }
         .glass-panel { background: var(--glass); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border: 1px solid var(--glass-border); border-radius: 24px; padding: 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
         .btn-glass { background: var(--accent); border: none; color: white; padding: 12px 24px; border-radius: 12px; font-weight: 700; text-transform: uppercase; text-decoration: none; display: inline-block; transition: 0.3s; width: 100%; text-align: center; }
         .btn-glass:hover { background: #e62e2e; transform: scale(1.02); color: white; }
-        .loan-btn { background: rgba(255,255,255,0.1); border: 1px solid var(--accent); color: white; border-radius: 12px; padding: 15px; transition: 0.3s; width: 100%; text-align: left; margin-bottom: 10px; font-weight: 600; }
-        .loan-btn:hover { background: var(--accent); transform: translateX(8px); }
+        .tool-btn { background: rgba(255,255,255,0.1); border: 1px solid var(--accent); color: white; border-radius: 12px; padding: 15px; transition: 0.3s; width: 100%; text-align: left; margin-bottom: 10px; font-weight: 600; }
+        .tool-btn:hover { background: var(--accent); transform: translateX(8px); }
         .calc-btn { background: rgba(40, 167, 69, 0.2); border: 1px solid #28a745; color: white; border-radius: 12px; padding: 15px; transition: 0.3s; width: 100%; text-align: left; margin-bottom: 10px; font-weight: 600; }
         .calc-btn:hover { background: #28a745; transform: translateX(8px); }
         #market-ticker { background: rgba(0,0,0,0.95); border-bottom: 1px solid var(--glass-border); padding: 10px 0; font-family: 'Roboto Mono', monospace; font-size: 0.85rem; z-index: 1000; }
         .modal-content { background: #1a1a1a; color: white; border: 1px solid var(--accent); border-radius: 20px; }
         .form-control { background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: white; border-radius: 10px; padding: 12px; }
+        .bio-photo { width: 150px; height: 150px; border-radius: 50%; border: 5px solid rgba(255,255,255,0.2); object-fit: cover; }
     </style>
 </head>
 <body>
@@ -30,19 +27,47 @@
 <div id="market-ticker" class="fixed-top">
     <div class="container-fluid">
         <marquee scrollamount="6">
-            <span class="text-danger">● LIVE MARKET:</span> 10Y TREASURY YIELD TRACKING | <span class="text-info">30Y CONVENTIONAL:</span> MARKET VOLATILITY ALERT | <span class="text-success">FHA/VA:</span> RATE LOCK OPPORTUNITY | <span class="text-warning">USDA:</span> RURAL DEVELOPMENT UPDATES | SERVING FISHERS & GREATER INDIANAPOLIS
+            <span class="text-danger">● LIVE MARKET:</span> 10Y TREASURY YIELD TRACKING | <span class="text-info">30Y CONVENTIONAL:</span> MARKET VOLATILITY ALERT | SERVING FISHERS & GREATER INDIANAPOLIS
         </marquee>
     </div>
 </div>
 
 <div class="container mt-5 pt-5">
+    <!-- Updated Header: Profile and Intro -->
     <div class="row mb-5 align-items-center">
-        <div class="col-lg-7">
-            <h1 class="display-3 fw-bold mb-3">New Age <span style="color: var(--accent);">Lending</span></h1>
-            <p class="lead mb-4">Wholesale rates and data-driven mortgage strategies for the modern Indiana homebuyer.</p>
-            <a href="#quote-section" class="btn btn-danger rounded-pill px-5 py-3 fw-bold">START QUICK QUOTE</a>
+        <div class="col-lg-3 text-center mb-4 mb-lg-0">
+            <!-- Replace 'YOUR_PHOTO_URL.jpg' with the actual link to image_4.png on your server/github -->
+            <img src="YOUR_PHOTO_URL.jpg" alt="David Schneider" class="bio-photo">
         </div>
         <div class="col-lg-5">
+            <h1 class="display-3 fw-bold mb-3">David Schneider</h1>
+            <p class="lead mb-4">Precision mortgage solutions from a wholesale market expert. I specialize in data-driven strategies for modern home financing in the Indianapolis area.</p>
+            <p class="small opacity-75 mt-n3">License: NMLS# 2151906</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+            <a href="#quote-section" class="btn btn-danger btn-lg rounded-pill px-5 py-3 fw-bold">START QUICK QUOTE</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="row g-4">
+        <!-- Quote Portal -->
+        <div id="quote-section" class="col-md-7">
+            <div class="glass-panel h-100">
+                <h3 class="fw-bold mb-4">Let's Connect</h3>
+                <form action="mailto:david.schneider1316@gmail.com" method="post" enctype="text-plain">
+                    <div class="row g-3">
+                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Full Name" required></div>
+                        <div class="col-md-6"><input type="email" class="form-control" placeholder="Email Address" required></div>
+                        <div class="col-md-12"><textarea class="form-control" rows="5" placeholder="Briefly describe your goals or questions..."></textarea></div>
+                        <div class="col-md-12"><button type="submit" class="btn-glass">SEND MESSAGE</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tools & Engine -->
+        <div class="col-md-5">
             <div class="glass-panel text-center">
                 <h6 class="text-uppercase small mb-3 opacity-50">Live Treasury Engine</h6>
                 <div id="tradingview_engine" style="height: 200px;"></div>
@@ -51,95 +76,37 @@
                 new TradingView.widget({ "autosize": true, "symbol": "TVC:US10Y", "interval": "D", "theme": "dark", "style": "2", "locale": "en", "hide_top_toolbar": true, "hide_legend": true, "container_id": "tradingview_engine" });
                 </script>
             </div>
-        </div>
-    </div>
-
-    <div class="row g-4">
-        <div id="quote-section" class="col-md-7">
-            <div class="glass-panel h-100">
-                <h3 class="fw-bold mb-4">Quick Quote Portal</h3>
-                <form action="mailto:david.schneider1316@gmail.com" method="post" enctype="text-plain">
-                    <div class="row g-3">
-                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Full Name" required></div>
-                        <div class="col-md-6"><input type="email" class="form-control" placeholder="Email Address" required></div>
-                        <div class="col-md-12">
-                            <select class="form-control">
-                                <option>Purchase</option>
-                                <option>Refinance</option>
-                                <option>Cash-Out</option>
-                            </select>
-                        </div>
-                        <div class="col-md-12"><textarea class="form-control" rows="4" placeholder="Briefly describe your goals..."></textarea></div>
-                        <div class="col-md-12"><button type="submit" class="btn-glass">Submit Quote Request</button></div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="col-md-5">
-            <div class="glass-panel h-100">
-                <h4 class="fw-bold mb-4">Loan Programs & Tools</h4>
-                <div class="d-grid gap-1">
-                    <button class="loan-btn" data-bs-toggle="modal" data-bs-target="#convModal">🏠 Conventional Details</button>
-                    <button class="loan-btn" data-bs-toggle="modal" data-bs-target="#fhaModal">🛡️ FHA Loan Details</button>
-                    <button class="loan-btn" data-bs-toggle="modal" data-bs-target="#vaModal">🎖️ VA Loan Details</button>
-                    <button class="loan-btn" data-bs-toggle="modal" data-bs-target="#usdaModal">🚜 USDA Loan Details</button>
-                    <button class="loan-btn" data-bs-toggle="modal" data-bs-target="#renoModal">🔨 Renovation Details</button>
-                    
-                    <h5 class="mt-4 mb-3 fw-bold small opacity-50">FINANCIAL CALCULATORS</h5>
-                    <button class="calc-btn" data-bs-toggle="modal" data-bs-target="#buyingPowerModal">📈 Buying Power Calculator</button>
-                    <button class="calc-btn" data-bs-toggle="modal" data-bs-target="#cashToCloseModal">💰 Indiana Cash to Close</button>
-                </div>
-                <div class="mt-4 p-3 rounded bg-dark text-center border border-secondary">
-                    <p class="fw-bold mb-0">NMLS# 2151906</p>
-                </div>
+            
+            <div class="glass-panel mt-4">
+                <h6 class="text-uppercase small mb-3 opacity-50 text-center">Tools & Program Details</h6>
+                <button class="loan-btn" data-bs-toggle="modal" data-bs-target="#convModal">🏠 Conventional Loan Details</button>
+                <button class="loan-btn" data-bs-toggle="modal" data-bs-target="#renoModal">🔨 Renovation & FHA Details</button>
+                <button class="calc-btn" data-bs-toggle="modal" data-bs-target="#cashToCloseModal">💰 Indiana Cash to Close</button>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Modals for Everything -->
+<!-- Simplified Modals -->
 <div class="modal fade" id="convModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content p-4">
     <h4 class="text-danger fw-bold">Conventional Loans</h4>
-    <p>Flexible terms with down payments as low as 3%. Ideal for buyers with solid credit seeking wholesale market rates.</p>
-</div></div></div>
-
-<div class="modal fade" id="fhaModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content p-4">
-    <h4 class="text-danger fw-bold">FHA Loans</h4>
-    <p>Low 3.5% down payment and flexible credit requirements. Perfect for first-time buyers in the Indy market.</p>
-</div></div></div>
-
-<div class="modal fade" id="vaModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content p-4">
-    <h4 class="text-danger fw-bold">VA Loans</h4>
-    <p>Zero down payment for Veterans and Service Members. Competitive rates with no monthly PMI.</p>
-</div></div></div>
-
-<div class="modal fade" id="usdaModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content p-4">
-    <h4 class="text-danger fw-bold">USDA Loans</h4>
-    <p>100% financing for eligible rural Indiana properties. Great for growing communities outside the city center.</p>
+    <p>Standard financing with competitive wholesale market rates. Flexible terms and down payments as low as 3% for qualified buyers.</p>
 </div></div></div>
 
 <div class="modal fade" id="renoModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content p-4">
-    <h4 class="text-danger fw-bold">Renovation Loans</h4>
-    <p>Finance your purchase and your repairs in one loan. Transform any fixer-upper into a dream home.</p>
-</div></div></div>
-
-<div class="modal fade" id="buyingPowerModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content p-4">
-    <h4 class="text-success fw-bold">Buying Power Calculator</h4>
-    <p>Based on a standard 45% DTI ratio. Your estimated maximum monthly housing payment is:</p>
-    <h2 class="text-center fw-bold text-success">$2,387.50</h2>
-    <p class="small text-muted text-center">Based on current Fishers, IN market averages.</p>
+    <h4 class="text-danger fw-bold">Renovation & FHA Options</h4>
+    <p>FHA loans offer flexible credit and low down payments (3.5%). Combine these with renovation financing to transform any fixer-upper into your dream home.</p>
 </div></div></div>
 
 <div class="modal fade" id="cashToCloseModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content p-4">
     <h4 class="text-success fw-bold">Indiana Cash to Close</h4>
-    <p>Estimated total needed at the closing table, including the 1% Indiana Homestead Tax Cap adjustments:</p>
-    <h2 class="text-center fw-bold text-success">$27,140.07</h2>
-    <p class="small text-muted text-center">*Estimated for a $350k purchase price.</p>
+    <p>This estimator accounts for state-specific title fees and the **1% Indiana Homestead Tax Cap** adjustments.</p>
+    <h2 class="text-center my-3 fw-bold text-success">$27,140.07*</h2>
+    <p class="text-center text-muted small">*Estimate based on $350k purchase in Indianapolis area.</p>
 </div></div></div>
 
 <footer class="mt-5 py-5 text-center opacity-50">
-    <p class="small">David Michael Schneider | Indy Home Lending<br><strong>NMLS# 2151906</strong></p>
+    <p class="small">David Schneider | Indy Home Lending | NMLS# 2151906</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
