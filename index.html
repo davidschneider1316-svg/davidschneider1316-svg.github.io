@@ -14,8 +14,12 @@
             --accent: #ff3e3e;
         }
 
+        /* Fixes button jump issues so they don't hide under the ticker */
+        html { scroll-behavior: smooth; }
+        #quote, #pulse { scroll-margin-top: 100px; }
+
         body {
-            /* Modern White House Background - No more mountains */
+            /* White Modern House Background */
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070');
             background-size: cover; 
             background-attachment: fixed; 
@@ -51,11 +55,12 @@
         .btn-glass:hover { background: #e62e2e; transform: scale(1.05); color: white; }
 
         #market-ticker {
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.9);
             border-bottom: 1px solid var(--glass-border);
-            padding: 8px 0;
+            padding: 10px 0;
             font-family: 'Roboto Mono', monospace;
             font-size: 0.85rem;
+            z-index: 2000;
         }
     </style>
 </head>
@@ -63,8 +68,8 @@
 
 <div id="market-ticker" class="fixed-top">
     <div class="container-fluid">
-        <marquee scrollamount="5">
-            <span class="text-danger">● LIVE MARKET:</span> 10Y TREASURY YIELD TRACKING | <span class="text-info">30Y CONVENTIONAL:</span> MARKET VOLATILITY ALERT | <span class="text-success">FHA/VA:</span> RATE LOCK OPPORTUNITY | <span class="text-warning">USDA:</span> RURAL DEVELOPMENT UPDATES | SERVING FISHERS & GREATER INDIANAPOLIS
+        <marquee scrollamount="6">
+            <span class="text-danger">● LIVE MARKET:</span> 10Y TREASURY YIELD TRACKING | <span class="text-info">30Y CONVENTIONAL:</span> MARKET VOLATILITY ALERT | <span class="text-success">FHA/VA:</span> RATE LOCK OPPORTUNITY | <span class="text-warning">USDA:</span> RURAL DEVELOPMENT UPDATES | <span class="text-primary">JUMBO:</span> SPECIALIZED HIGH-BALANCE SOLUTIONS | SERVING FISHERS & GREATER INDIANAPOLIS
         </marquee>
     </div>
 </div>
@@ -98,35 +103,9 @@
     </div>
 
     <div class="row g-4">
+        <!-- Lead Portal with Tally Script Integration -->
         <div id="quote" class="col-md-8">
             <div class="glass-panel h-100" style="background: rgba(255,255,255,0.95); color: #212529;">
-                <h2 class="fw-bold mb-4">Quick Quote Portal</h2>
-                <div class="p-5 border rounded-4 text-center bg-white" style="border-style: dashed !important;">
-                    <h4 class="text-muted">Secure Form Loading...</h4>
-                    <p class="small text-muted">Ready to provide instant rate feedback.</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="pulse" class="col-md-4">
-            <div class="glass-panel mb-4">
-                <h4 class="fw-bold">Market Pulse</h4>
-                <p class="small">Real-time tracking of the indicators that drive your mortgage rate.</p>
-                <hr class="opacity-20">
-                <ul class="list-unstyled small">
-                    <li class="mb-2">✓ Wholesale Broker Rates</li>
-                    <li class="mb-2">✓ Direct Market Access</li>
-                    <li class="mb-2">✓ Local Fishers Expertise</li>
-                    <li class="mb-2">✓ New Construction Financing</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-<footer class="mt-5 py-5 text-center opacity-50">
-    <p class="small">&copy; 2026 David Michael Schneider | Indy Home Lending</p>
-</footer>
-
-</body>
-</html>
+                <h2 class="fw-bold mb-4 text-center">Quick Quote Portal</h2>
+                <iframe data-tally-src="https://tally.so/embed/YOUR_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Quick Quote Form"></iframe>
+                <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("Normally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
